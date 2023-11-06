@@ -15,4 +15,4 @@ bgt a0, s2, exit
 mv a0, s2
 
 exit:
-mv a0, a0 # Kjents unødig, men fekk det ikkje til å fungere på anna vis
+nop
