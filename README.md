@@ -65,6 +65,7 @@ Von Neumann-arkitekturen representerer eit fundamentalt skifte i designet av dat
 
 Når ein instruksjon er henta frå minnet, går CPU'en gjennom ein instruksjonssyklus som byrjar med å dekode instruksjonen for å forstå kva for ein operasjon som skal utførast. Etterpå blir operasjonen utført, dette kan innebære alt frå aritimetiske berekningaar til datamanipulasjon eller interaksjon med andre systemkomponentar. Resultatet av operasjonen blir anten midlertidig lagra i registeret til CPU'en for rask tilgong, eller skriven tilbake til minnet for seinare bruk. Viktigheita av denne arkitekturen ligg i enkelheita og effektiviteten den gir. Dette har gjort det mogleg å designe og konstrurere datamaskinar som kan utføre eit bredt utval av oppgåver ved å køyre forskjellige program utan å måtte endre maskinvara. Dette er grunnlager for moderne PU og har leia til ei eksplosiv vekst i dataprogram og applikasjonar. 
 
+<a name=buss></a>
 Denne sekvensielle tilnærminga til databehandling blir transportert gjennom eit system av databussar, med kontrollsignal som dirigerer aktivitetane i CPU'en basert på den dekoda instruksjonen. Harvard-arktitekturen, til dømes, nyttar seg av separate lagrings- og bussystem for instruksjonar og data, noko som potensielt aukar hastigheita på dataflyten og reduserer ventetida for operasjonane. 
 
 Gjennom kontinuerlige forbetringar og innovasjonar i mikroarkitekturen - den fysiske implementeringa av settet med instruksjonar som CPU'en kan utføre - har moderne prosessorar blitt betydeleg mykje raskare og meir effektive.
@@ -96,7 +97,7 @@ Minnehierarkiet, frå hurtig og dyr cache til treigare og billigare RAM og lagri
 #### I/O - Input/Output
 I/O-einingar tillet ein datamaskin å kommunisere med omverda og brukeren. Dei inkluderer alt frå tastatur og mus, til skjermar, printarar og nettverkskort.
 
-Desse einingane kommuniserer med CPU og mine gjennom I/O-bussar, som er dataspor som fraktar informasjonen fram og tilbake. Desse bussane er avgjerande for datamaskina si evne til å overføre data til og fra I/O-einingar, og effektiviteta av desse bussane påverkar direkte ytinga til systemet. 
+Desse einingane kommuniserer med CPU og minne gjennom I/O-bussar, som er dataspor som fraktar informasjonen fram og tilbake. Desse bussane er avgjerande for datamaskina si evne til å overføre data til og fra I/O-einingar, og effektiviteta av desse bussane påverkar direkte ytinga til systemet. 
 
 
 ### Instruksjonssettarkitektur
@@ -192,15 +193,60 @@ Desse ulike nivåa av cache arbeider saman for å forbetre den genrelle ytinga t
 ### Minnehierarki og lagringsteknologi
 Minnehierarkiet i ei datamaskin er eit strukturert oppsett av minne og lagringseiningar som varierer i hastigheit, storleik og avstand til CPU'en. Øvst i hierarkiet finn ein CPU-registera som er den raskaste formen for minne lagring, men også den med minst kapasitet og direkte tilkopla til CPU'en. Deretter føl cache-minnet (L1, L2 og L3) som fungerer som midlertidlig lagringsplass for å minimere antal langsame minneaksessar som CPU'en må utføre. 
 
-Under cache ligg hovudminnet, eller RAM, som har større kapasitet enn registera og cache, men er treigare og framleis [voltatilt](#voltatilt). Lagringseiningar
+Under cache ligg hovudminnet, eller RAM, som har større kapasitet enn registera og cache, men er treigare og framleis [voltatilt](#voltatilt). Lagringseiningar som SSD (Solid State Drives) og HDD (Hard Disk Drives) utgjer neste nivå i hierarkiet. Desse er betydeleg treigare enn RAM, men tilbyr mykje større lagringskapasitet og er ikkje-flyktige, noko som tyder at dei held på dataen sjølv om systemet er skrudd av.
+- Solid State Drives (SSD): SSD brukar flash-basert minne, noko som er raskare, meir påliteleg og meir energi effektivt enn tradisjonelle harddiskar. Dei har ingen bevegelige delar, noko som reduserer risikoen for mekaniske feil og gjer dei meir holdbare. SSD er derimot dyrare pg GB enn HDD.
+- Harddiskar (HDD): Disse einingane lagrar data magnetisk på roterande plater. Sjølv om dei er treigare enn SSD, spesielt når det gjeld tilgongstid og dataoverføringshastigheit, tilbyr HDD meir lagringskapasitet for mengane og er derfor eit meir kostnadseffektivt alternativ for mykje lagring.
+- Optisk lagring: Dette inkluderer medier som CD, DVD og Blu-ray-plater. Sjølv om dei er relevante for distribusjon av media og arkivering, har optisk lagrning blitt mindre populær som primær lagringsløysing på grunn av avgrensingar i kapasitet og hastighet samanlikna med SSD og HDD.
+
+Minnehierarkiet påverkar systemet si generelle yting på grunn av dei hastigheitsskilnadane mellom dei ulike lagringseiningane. Ein CPU kan utføre operasjonar mykje raskare enn det er mogleg å lese og skrive til RAM, som igjen er mykje raskare enn sekundære lagringseiningar som SSD og HDD. Derfor brukar ein hurtige, men dyre og små minneeiningar (som cache) til å lagre data og instruksjoner som CPU'en treng umiddelbart, medan større og treigare einingar blir brukt til å lagre større mengder data som ikkje krever rask tilgong.
+
+Balansen mellom hastigheit og kapasitet er avgjerande for optimal yting. For mykje fokus på kapasitet kan føre til ein flaksehals dersom data ikkje blir flytta raskt nok til og fra lagringseiningane. På andre sida, hvis systemet har for mye rask, underutnytta minne, kan det vere eit spørsmål om ineffektiv ressursbruk. Moderne system brukar ein kombinasjon av RAM, SSD og nokre gonger HDD for å skape ei balansert og kostnadseffektiv løysing.
 
 ### Virtualisering og verning av minne
+Virtuelt minne er ein teknikk som blir brukt av OS for å gi applikasjonar inntrykk av at det er meir minne tilgjengeleg enn det som faktisk eksisterer. Dette kan ein oppnå ved å  bruke ein del av lagringsplassen på harddisken som om det var ekstra RAM. Dette tillet OS handtere større program eller fleire program samstundes enn det ville vært mogleg med berre den fysiske RAM. 
+
+- Sideveksling (Paging): OS deler minnet inn blokker av ein viss storleik, kald sider. Når eit program treng data som ikkje er i RAM, flyttar OS ei side av data fra disk til RAM og erstattar eksisterande side ved behov.
+- Segmentering: Dette er ei anna form for virtuell minnehandtering der minnet er delt inn i segmenter av varierande storleikar som representerer logiske einingar som program eller datastrukturar.
+
+Minnevern er avgjerande for å oppretthalde stabilitet og sikkerhet innad i systemet. Det sikrar at ein prosess ikkje kan tilgå eller endre minneområde som er tildelt til ein anna prosess. Dette er viktig for å forhindre at ein prosess forårsakar feil i ein annan prosess, anten ved uhell eller gjennom ondsinna kode. 
+
+OS handterer minnevern ved hjelp av mekanismar som:
+- Minnetillatelsar: Sider eller segment kan få ulike løyve (lese, skrive og køyre), og OS syt for at desse løyvene blir handheldt.
+- Sidevern: Kvar side i minnet kan vernast slik at forsøk på uautorisert tilgong blir blokkert og eventuelt rapportert til OS.
+
+OS bruker ulike strategiar for å handtere minnet effektivt:
+- Garbage Collection: Dette er ein prosess for automatisk minnerydding som identifiserer og frigjer minne som ikkje lenger er i bruk av eit program.
+- Minnetildeling og frigjering: OS tildel minne til program ved behov og frigjer det når programma er ferdige, ofe ved hjelp av algoritmar som "first fit", "best fit" eller "worst fit" for å administere minneblokker
+
+Sikkerheit knytta til minne er eit kritisk aspekt av programvaredesign og system adminstrasjon. Sårbarheiter som buffer overflows, der data blir skriven utanfor grensene til ein allokert buffer, kan føre til sikkerheitsbrukk ved å tillate ondsinna kode å køyre. For å forhindre slike problem har ein:
+
+- Bounds Checking: Sørg for at program utfører grensesjekking på buffer og input.
+- Address Space Layout Randomization (ASLR): Dette er ein sikkerheitsteknikk som tilfeldig plasserer data i minnet for å gjere det vanskelegare for angriparar å føreseie kvar spesifikke delar av eit program vil vere i minnet.
+- Non-executable Memory: Mange moderne OS forhindrar køyring av kode frå område av minnet som er allokert for data, noko som hjelp til å forhindre utnytting av buffer overflows.
+
 
 
 <a name="del6"></a>
 ## 6. Inndata/Utgongssystem
 ### I/O arkitektur
+Inngong/utgongsarkitekturen (I/O-arkitekturen) er eit kritisk subsystem i ei datamaskin som handlar om korleis data flyttar seg mellom CPU'en og dei eksterne einingane som skjermar, tastatur, nettverkskort og lagringseiningar. Denne arkitekturen fungerer som ei bru som koblar den raske og komplekse verda til CPU'en med den treigare og mer varierte verda til periferiutstyr. I/O-arkitekturen må handtere ein stor variasjon i einingshastigheiter og kommunikasjonsprotokollar.
+
+Det finst fleire metodar for å kontrollere I/O-operasjonar:
+- Programstyrt I/O: Dette er den enklaste metoden der CPU'en aktivt ventar på og sjekkar statusen til ei I/O-eining. Dette er ikkje effektivt sidan det bind CPU'en til I/O-prosessen og kan føre til mykje unødvendig venting.
+- Avbruddsstyrt I/O: Her blir CPU'en frigjort til å utføre andre oppgåver medan I/O-operasjonen pågår. Når I/O-operasjonen er ferdig, sender eininga eit avbrudd til CPU'en, som da kan handtere overføringa av data.
+- Direkte minnetilgong (DMA): DMA tillet I/O-einingar å sende og motta data direkte til og frå hovudminnet, utan konstant overvåkning frå CPU'en. Dette frigjer CPU'en frå å måtte kopiere data frå ein buffer til ein annan og forbetrar ytinga til systemet betydeleg.
+
+Datamaskinar opererer i to modusar: brukermodus og kernelmodus (også kalla supervisormodus). Brukermodus er der vanlege appliksajonar køyrer; desse applikasjonane har begrensa tilgong til systemressursar og kan ikkje direkte utføre I/O-operasjonar. Kernelmodus er der kjerna til OS køyrer og har full tilgong til maskinvara og kan utføre I/O-operasjonar.
+
+Når ein applikasjon i brukermodus treng å utføre ein I/O-operasjon, må den gjere eit systemkall til OS, som då kan bytte til kernelmodus for å utføre I/O-operasjonen på ein sikker og kontrollert måte. Dette skjer for å beskytte systemet mot skadeleg eller feilaktig kode og for å sikre at I/O-operasjonane ikkje forstyrrar kvarandre, noko som er essensielt for stabilitet og sikkerhet i systemet.
+
+
 ### Bussystem og kommunikasjon
+Kommunikasjon over bussystemet involverer overføring av data, adresser og kontrollsignal:
+- Når CPU'en treng å lese data frå minnet, sender den ei adresse over adresse[buss](#buss)en til minnet.
+- M
+
+
 ### Eksempel på I/O-einingar
 
 
