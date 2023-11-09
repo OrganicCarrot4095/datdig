@@ -1,5 +1,5 @@
 #  Kompendium TDT4160 - Datamaskinar og digitalteknikk
-#### Dette er eit sjølvskriven kompendium basert på "Structured Computer Organization" 6th edt. av Tanenbaum og Austin.
+#### Dette er eit sjølvskriven kompendium ved god gjelp av Google og Geir. Forfattaren innehar infinitesimale mengder kunnskap og tek ikkje ansvar for evt. feil.
 
 <a name="del1"></a>
 ## 1. Innleiing til Datamaskinar og digitalteknikk
@@ -15,6 +15,7 @@
 7. [*Parallelle datamaskinar*](#del7)
 8. [*Operativsystem og maskinvaregrensesnitt*](#del8)
 9. [*Datamaskinnettverk*](#del9)
+10. [*Framtidige trender*](#del10)
 
    <!-- Introduksjon                                    Kap 1,2               -->
    <!-- Instruksjonssett                                Kap 5                 -->
