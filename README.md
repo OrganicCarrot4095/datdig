@@ -518,4 +518,44 @@ Teknologisk utvikling kan forsterke eksisterande sosiale og økonomiske ulikskap
 Ansvarleg innovasjon handlar om å utvikle ny teknologi på ein måte som erkjenner etiske, sosiale, miljømessige og økonomiske konsekvensar. Dette inneber ei forplikting til openheit, inkludering og berekraft i utviklingsprosessen. Utviklarar og forskarar blir bedt om å engasjere seg med interessenter, inkludert publikum, for å forstå breiare samfunnseffekter av deira arbeid og å implementere designprinsipp som respekterer brukerane sine rettigheiter og velvære. Ved å fremje ansvarleg innovasjon, blir det sikra at teknologi ikkje berre driv fraover for sin eigen del, men også bidreg positivt til samfunnet.
 
 
+## Oppsummeringsforelesning: 
+
+#### ISA: 
+... er måten vi interagerer med datamaskina på.
+
+Består av bl.a.:
+- **instruksjonssettet:** organisering av bits som tolkast av digitallogikk: _formatet_, typar instruksjonar: flytcontroll, dataflytting, prosedyrekall, arkiekturspesifikke instruksjonar (pipeline, flush)
+- **korleis ein interagerer med lager/minne**
+- **tilgjengelege register:** det er mogleg å byggje datamaskinar utan register, men det er ofte spesialtilfeller, det er ikkje nødvendigvis ein 1-til-1 mellom register ein har tilgong til gjennom instruksjonssettet og reelle register.
+- korleis andre einingar, CPU-ar, etc. kan fortelja CPU om at noko har skjedd: avbrot
+
+
+#### Mikroarkitekturen:
+... implementerar ISA. Eit konsept i ISA har som regel eit tilsvarande konsensept i mikroarkitekturen. 
+- Det finst mange måtar å implementere eit instruksjonssett på.
+- Vi har sett på RISCV ISA i ein: single cycle-maskin, pipeline
+- Single cycle-arkitektur: ein trade-off mellom enkel implementasjon (lav kompleksitet og få transistorar) mot lavt antall instruksjonar pr sekund.
+- Pipelining (samlebånd): aukar instruksjonsnivåparallellismen og dermed ytinga, kuttar kritisk sti, aukar og kompleksiteten (avhengighetar, branch-prediction).
+- Minnehierarkiet sine mikroarkitekturar: cacher, page tables
+- Element: register bussar, mux, ALU
+
+```
+                                           --> Utføre instruksjonar -->
+                                           --> Utføre instruksjonar -->
+Hente instruksjonar frå instruksjonsminnet --> Utføre instruksjonar --> Lagre resultatet av instruksjonar til dataminnet
+                                           --> Utføre instruksjonar -->
+                                           --> Utføre instruksjonar -->
+
+                                                   SUPERSKALAR
+```
+
+#### Digitallogikk: 
+... er den fysiske implementasjonen av mikroarkitekturen.
+
+- kombinatorisk logikk: logiske portar
+- sekvensiell logikk: register, tilstandsmaskinar
+
+Desse kan kombinerast for å implemetere mikroarkitekturar.
+
+
 
