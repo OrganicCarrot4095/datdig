@@ -9,29 +9,29 @@ Datamaskinar og digitalteknologi er overalt i dagens samfunn, frå handholdte ei
 Datamaskinar har gjennomgått stor utvikling gjennom tidene. Frå dei første mekaniske reknemaskinane, til dei avanserte mikroprosessorane som ligg i kjernen til dei fleste teknologiane vi har i dag. Innovasjonar i mikroarkitekturen - den fysiske implementasjonen av settet med instruksjonar maskina kan utføre, ofte referert til som maskinas "instruksjonssettakritektur" - har vore ein stor pådrivar for denne utviklinga. Her er mikroarkitekturen tilpassa for å effektivt utføre instruksjonssettakritekturen, og omvendt. Saman dannar dei fundamentet for den digitale logikken som er essensiell for funksjonaliteta til ei datamaskin.
 
 ### Grunnleggjande datamaskinterminologi
-####**Datamaskin:**
+#### Datamaskin:
 Ei datamaskin er ei elektronisk eining som kan behandle og lagre data ved å utføre eit sett med instruksjonar kalt eit program. Datamaskinar utfører eit breidd spekter av funksjonar, frå enkle kalkulasjonar til komplekse databehandlingsoppgåver. Dei viktigste komponentane i ei datamaskin inkluderer:
 - **Input-einingar:** Utstyr som tastatur, mus, og mikrofon som lét brukarane leggje inn data til datamaskina.
 - **Output-einingar:** Desse inkluderer skjermar, skrivarar og høgtalarar som datamaskina brukar for å presentere resultata av prosesseringa.
 - **Prosesseringseiningar:** Oftast referert til som sentralprosessoren (CPU), er dette "hjernen" i datamaskina som utfører programinstruksjonane.
 - **Lagringseining:** Omfattar komponentar som harddiskar, SSD-er og USB-stasjoner som lagrar data permanent eller midlertidig.
 
-####**Bit og Byte:**
+#### Bit og Byte:
 - **Bit:** Ein bit er den mest grunnleggjande eininga av digital informasjon og kan ha ein av to verdier, 0 eller 1. 
 - **Byte:** Ein byte består av 8 bits og er ei standard eining for å måle datamengde. Bytes blir brukt til å representere ein karakter som bokstavar, tal, eller symbol i digitale systemer.
 
-####**Programvare vs. Maskinvare:**
+#### Programvare vs. Maskinvare:
 - **Programvare:** Dette er dei instruksjonane og dataane som køyrer på og kan installerast på maskinvara. Programvare inkluderer operativsystem, applikasjonar og drivarar.
 - **Maskinvare:** Dette er dei fysiske einingane som utgjer ei datamaskin, inkludert prosessoren, minnet, hovudkortet, lagringseiningar og periferiutstyr.
 
-####**Operativsystem:**
+#### Operativsystem:
 Eit operativsystem (OS) er eit program som fungerer som ein mellommann mellom brukeren og maskinvara til datamaskina. Det administrerer systemressursar og gir brukarar eit grensesnitt for å køyre applikasjonar. OS handterer oppgåver som filhandtering, minnehandtering, prosesskontroll og styring av periferiutstyr.
 
-####**Nettverk:**
+#### Nettverk:
 Et datanettverk er ein gruppe av datamaskiner og andre einingar som er forbunde samen for å dele ressursar og data. Internettet er eit globalt system av samenkopla datanettverk som brukar internettprotokollen (IP) for å knytte saman einingar over heile verda, tillét datamaskinar å kommunisere, og dele informasjon på tvers av lange avstandar.
 
-####**Brukergrensesnitt:**
-Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det finnes to hovedtyper:
+#### Brukergrensesnitt:**
+Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det finst to hovedtyper:
 - **Grafiske brukergrensesnitt (GUI):** Tillét brukarar å samhandle med datamaskinar gjennom visuelle element som vindu, ikon og menyar.
 - **Kommandolinje-grensesnitt (CLI):** Tillét brukarar å samhandle med datamaskinen gjennom tekstkommandoar. CLI er kraftigare men kan være meir komplekst å bruke og krev kjennskap til spesifikke kommandospråk.
 - 
@@ -105,6 +105,11 @@ Den grunnleggjande strukturen til Von Neumann er basert på fire hovudkomponenta
 
 Von Neumann-arkitekturen representerer eit fundamentalt skifte i designet av datamaskinar, ved å innføre eit konsept der både instruksjonar og data er lagra i det same minneområdet. Dette var ei revolusjonerande utvikling samanligna med dei tidlege maskinane som var hardkoda for å utføre spesifikke oppgåver, då det vart mogleg for datamaskinar å bli omprogrammerte kun ved å endre innhaldet i minnet - utan behov for nokre fysiske endringar i maskinvara. Bakgrunnen for denne arkitekturen er idéen om ein "stored-program computer". Dette tillét maskina å utføre eit bredt spekter av oppgåver ved å hente og utføre instruksjonane sekvensielt, ein prosess som er kjenta i lineære sekvensiell prosessering. Denne prosesseringa blir styrt av programteljaren (PC), som innehar ei kritisk rolle i å halde styr på adressa til neste instruksjon som skal utførast. Etter at instruksjonen er henta, aukar PC-en verdien sin for å peike på den påfølgjande instruksjon i minnet, med mindre sjølve instruksjonen angir eit hopp i sekvensen. 
 
+<div align="center">
+   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200513094907/von-neumann.png" width="382"/>
+   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200513095200/harvard-1.png" width="425"/> 
+</div>
+
 Når ein instruksjon er henta frå minnet, går CPU-en gjennom ein instruksjonssyklus som byrjar med å dekode instruksjonen for å forstå kva for ein operasjon som skal utførast. Etterpå blir operasjonen utført, dette kan innebere alt frå aritimetiske berekningar til datamanipulasjon eller interaksjon med andre systemkomponentar. Resultatet av operasjonen blir anten midlertidig lagra i registeret til CPU-en for rask tilgong, eller skriven tilbake til minnet for seinare bruk. Viktigheita av denne arkitekturen ligg i enkelheita og effektiviteten den gir. Dette har gjort det mogleg å designe og konstrurere datamaskinar som kan utføre eit bredt utval av oppgåver ved å køyre forskjellige program utan å måtte endre maskinvara. Dette er grunnlaget for moderne PU og har leia til ei eksplosiv vekst i dataprogram og applikasjonar. 
 
 <a name=buss></a>
@@ -118,9 +123,13 @@ Von Neumann-arkitekturen har ikkje berre fordelar. På grunn at delinga av minne
 ### Kjernekomponentar i ei datamaskin
 #### CPU - Central Processing Unit
 CPU, eller prosessoren, er hjernen til datamaskina og ansvarleg for å tolke og utføre dei fleste av instruksjonane frå dei andre komponentane og programvara til datamaskina. Den består av fleire nøkkelkomponentar:
-- **Register:** Små lagringsområde som blir brukt for å utføre operasjonar og midlertidig halde på data.
-- **Kontrolleining (CU):** Dirigerer operasjonane til CPU-en ved å hente, tolke og utføre instruksjonar.
-- **Aritmetisk/logisk eining (ALU):** Utfører matematiske, logiske og avgjersleoperasjonar.
+- **Kontrolleining (CU):** Får instruksjonar frå RAM og bryt dei ned til spesifikke kommandoar til andre komponentar.
+- **Aritmetisk/logisk eining (ALU):** Utfører matematiske, logiske og avgjerdsleoperasjonar.
+- **Register:** Små lagringsområde som blir brukt for å utføre operasjonar og midlertidig halde på data. Registera fungerer på same måte som RAM, berre at dei inne i CPU-en, noko som gjer dei raskare og nyttigare for å midlertidig lagre eit tal medan intruksjonar blir prosessert. When the ALU sends the output to a register, the value wont actually be saved until the control unit turns on the register set wire.
+
+<div align="center">
+   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg" width="382"/>
+</div>
 
 
 #### Minne
@@ -139,14 +148,14 @@ Minnehierarkiet, frå hurtig og dyr cache til treigare og billigare RAM og lagri
 #### I/O - Input/Output
 I/O-einingar tillét ein datamaskin å kommunisere med omverda og brukaren. Dei inkluderer alt frå tastatur og mus, til skjermar, printarar og [nettverkskort](#nettverkskort).
 
-Desse einingane kommuniserer med CPU og minne gjennom I/O-bussar, som er dataspor som fraktar informasjonen fram og tilbake. Desse bussane er avgjerande for datamaskina si evne til å overføre data til og fra I/O-einingar, og effektiviteta av desse bussane påverkar direkte ytinga til systemet. 
+Desse einingane kommuniserer med CPU-en og minne gjennom I/O-bussar, som er dataspor som fraktar informasjonen fram og tilbake. Desse bussane er avgjerande for datamaskina si evne til å overføre data til og fra I/O-einingar, og effektiviteta av desse bussane påverkar direkte ytinga til systemet. 
 
 
 ### Instruksjonssettarkitektur
 
 Eit instruksjonssett er ei samling av kommandoar som CPU-en kan gjenkjenne og utføre. Det definerer dei lågnivå operasjonane som prosessoren kan utføre og spelar ei kritisk rolle i CPU-funksjonalitet. Desse kommandoane er grunnlaget for all programvare, sidan høgare-nivå språk til slutt må oversettje til desse instruksjonane for at CPU-en skal kunne utføre dei. 
 
-RISC (Reduced Instruction Set Computer) og CISC (Complex Instruction Set Computer) er to forskjellege typar arkitekturar basert på instruksjonssett. RISC-arkitektur fokuserer på å ha eit mindre og meir optimisert sett av instruksjonar som ofte kan utførast i éin klokkesyklus. CISC derimot, inkluderer eit breiare og meir komplekst sett av instruksjonar som kan utføre meir kompliserte oppgåver pr instruksjon, men kan kreve fleire klokkesyklusar for å utføre. 
+RISC (Reduced Instruction Set Computer) og CISC (Complex Instruction Set Computer) er to forskjellege typar arkitekturar basert på instruksjonssett. RISC-arkitektur fokuserer på å ha eit mindre og meir optimalisert sett av instruksjonar som ofte kan utførast i éin klokkesyklus. CISC derimot, inkluderer eit breiare og meir komplekst sett av instruksjonar som kan utføre meir kompliserte oppgåver pr instruksjon, men kan kreve fleire klokkesyklusar for å utføre. 
 
 Ein typisk instruksjonssettarkitektur inneheld fleire typar instruksjonar:
 - **Aritmetiske instruksjonar:** Utfører matematiske operasjonar som addisjon og subtraksjon.
@@ -500,5 +509,6 @@ Automatisering og kunstig intelligens bringer store endringar til arbeidsmarkede
 Teknologisk utvikling kan forsterke eksisterande sosiale og økonomiske ulikskapar gjennom det digitale skiljet – skilnaden mellom dei som har tilgong til moderne informasjons- og kommunikasjonsteknologi, og dei som ikkje har det. Dette skiljet kan sjåast globalt mellom ulike land, så vel som innad i land, mellom ulike samfunnslag. Ulik tilgong til teknologi påverkar utdanning, jobbmolegheiter og til og med tilgong til offentlege tenester.
 
 Ansvarleg innovasjon handlar om å utvikle ny teknologi på ein måte som erkjenner etiske, sosiale, miljømessige og økonomiske konsekvensar. Dette inneber ei forplikting til openheit, inkludering og berekraft i utviklingsprosessen. Utviklarar og forskarar blir bedt om å engasjere seg med interessenter, inkludert publikum, for å forstå breiare samfunnseffekter av deira arbeid og å implementere designprinsipp som respekterer brukerane sine rettigheiter og velvære. Ved å fremje ansvarleg innovasjon, blir det sikra at teknologi ikkje berre driv fraover for sin eigen del, men også bidreg positivt til samfunnet.
+
 
 
