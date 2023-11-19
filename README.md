@@ -558,4 +558,7 @@ Hente instruksjonar frå instruksjonsminnet --> Utføre instruksjonar --> Lagre 
 Desse kan kombinerast for å implemetere mikroarkitekturar.
 
 
+#### Virtuelt minne: 
+- Eigentleg eit OS-konsept, men det finst ofte støtte for virtuelt minne i mikroarkitektur: MMU, TLB (translation lookaside buffer)
+
 
