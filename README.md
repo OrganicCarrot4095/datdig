@@ -563,7 +563,7 @@ Desse kan kombinerast for å implemetere mikroarkitekturar.
 
 
 
-### Det følgjande er henta frå <a href="http://youkok.com/askeland/" target="blank">Christans kokebok</a>
+### Følgjande er henta frå <a href="http://youkok.com/askeland/" target="blank">Christans kokebok</a>
 
 
 <h2>Alt man trenger vite for å stå på Data GK-eksamen...</h2>
