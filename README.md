@@ -46,6 +46,8 @@ Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det
 8. [*Operativsystem og maskinvaregrensesnitt*](#del8)
 9. [*Datamaskinnettverk*](#del9)
 10. [*Framtidige trender*](#del10)
+11. [*Oppsummering*](#oppsummering)
+12. [*Det man trenger å vite...*](#christianskokebok)
 
    <!-- Introduksjon                                    Kap 1,2               -->
    <!-- Instruksjonssett                                Kap 5                 -->
@@ -518,6 +520,8 @@ Teknologisk utvikling kan forsterke eksisterande sosiale og økonomiske ulikskap
 Ansvarleg innovasjon handlar om å utvikle ny teknologi på ein måte som erkjenner etiske, sosiale, miljømessige og økonomiske konsekvensar. Dette inneber ei forplikting til openheit, inkludering og berekraft i utviklingsprosessen. Utviklarar og forskarar blir bedt om å engasjere seg med interessenter, inkludert publikum, for å forstå breiare samfunnseffekter av deira arbeid og å implementere designprinsipp som respekterer brukerane sine rettigheiter og velvære. Ved å fremje ansvarleg innovasjon, blir det sikra at teknologi ikkje berre driv fraover for sin eigen del, men også bidreg positivt til samfunnet.
 
 
+
+<a name="Oppsummering"></a>
 ## Oppsummeringsforelesning: 
 
 #### ISA: 
@@ -563,6 +567,7 @@ Desse kan kombinerast for å implemetere mikroarkitekturar.
 
 
 
+<a name="christianskokebok"></a>
 ### Følgjande er henta frå <a href="http://youkok.com/askeland/" target="blank">Christans kokebok</a>
 
 
