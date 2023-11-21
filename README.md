@@ -562,3 +562,136 @@ Desse kan kombinerast for å implemetere mikroarkitekturar.
 - Eigentleg eit OS-konsept, men det finst ofte støtte for virtuelt minne i mikroarkitektur: MMU, TLB (translation lookaside buffer)
 
 
+
+
+<h2>Alt man trenger vite for å stå på Data GK-eksamen...</h2>
+<table border="1" width="1100px">
+	<tbody><tr>
+		<th width="150px">Registre</th>
+		<td>
+			<ul>
+				<li>PC - Program Counter inneholder adressen til instruksjonen som utføres, eller neste instruksjon som skal utføres. (avhengig av måten maskinen er bygd)</li>
+				<li>IR - Instruction Register er der kontrollenheten lagrer instruksjonen som blir gjennomført nå. Den ligger her mens instruksjonen blir dekodet, startet og gjennomført.</li>
+				<li>MAR - Memory Address Register inneholder adresse til neste minnelokasjon der vi finner neste instruksjon</li>
+				<li>MDR - Memory Data Register inneholder data som skal bli lagret i hovedminne (RAM), eller data som har blitt hentet fra minne. Virker som en buffer så data er klar for prosessor.</li>
+				<li>MBR - Memory Buffer Register er et bufferregister mellom minne og prosessor</li>
+				<li>LV - Local Variable inneholder pekerverdi.</li>
+				<li>SP - Stack Pointer inneholder pekerverdi.</li>
+				<li>CPP - Constant Pool Pointer inneholder pekerverdi</li>
+				<li>TOS - Top Of Stack skal alltid inneholde ordet på toppen av stakken</li>
+				<li>OPC - OpCode register kan fritt brukes.</li>
+				<li>H - Holding Register inneholder verdien som skal inn i A-inngangen til ALU.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>ALU-flagg</th>
+		<td>
+			<ul>
+				<li>N - settes når svaret fra ALU er negativt</li>
+				<li>Z - settes når svaret fra ALU er 0</li>
+				<li>C - carry, når vi f.eks. vil legge sammen 255 og 2 i 8-bit uten fortegnsbit. Svaret vil da bli 0000 0010 (2) som betyr (255+2). Et C-flagg vil da bli lagt til i statusregisteret.</li>
+				<li>V - overflow, når vi f.eks. vil legge sammen 127 og 127 i 8-bit med fortegnsbit. Svaret vil da bli 1111 1110 (254) eller i toers-kompliment -2. Et V-flagg vil da bli lagt til i statusregisteret.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Von Neumann</th>
+		<td>
+			Data og instruksjoner er lagret i samme minne og beregninger skjer sekvensielt. Von Neumann-arkitektur gjør det mulig å skrive program som kan endre sin egen programkode.
+			<ul>
+				<li>ALU - Aritmetisk og logisk enhet som utfører beregningene</li>
+				<li>Control Unit - Kontollenhet som dekoder instruksjonene og gjennomfører dem. Kontollenheten kan enten være hard-wired kodet eller inneholde mikroprogram styrt av en mikrokontroller</li>
+				<li>Memory - Primærminnet (RAM) inneholder data og instuksjoner</li>
+				<li>I/O - Enheter for inn- og utdata</li>
+			</ul>
+			Moderne datamaskiner har ALU og kontrollenhet på prosessor (CPU), benytter seg av registre, hurtigbuffere, busser og millioner av transistorer, men konseptet er veldig likt. Overføring av data mellom minne og CPU blir i dag sett på som et av de største problemene med Von Neumann-arkitektur.
+		</td>
+	</tr>
+	<tr>
+		<th>MIR</th>
+		<td>
+			MicroInstruction Register
+			<ul>
+				<li>Addr - peker på neste mikroinstruksjon i instruksjonen</li>
+				<li>J - Jam: sier ifra om ALU har flagget neste mikroinstruksjon eller om det kommer hopp (betinget hopp)</li>
+				<li>ALU - bestemmer hvilken funksjon ALU skal gjennomføre</li>
+				<li>C - inneholder adressen til C-bussen, som blir det samme som adressen til registeret det skal skrives til.</li>
+				<li>Mem - sier ifra om det skal gjøres noe med minne</li>
+				<li>B - inneholder adressen til B-bussen, som blir det samme som adressen til registeret det skal leses fra.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Superskalar CPU</th>
+		<td>
+			En superskalar prosessor implementerer en form for parallellitet som kalles instruksjonsnivåparallellitet. Dette betyr at den kan utføre flere instruksjoner pr. klokkesyklus (dupliserer CPU-enheter).
+		</td>
+	</tr>
+	<tr>
+		<th>Lokalitet</th>
+		<td>
+			<ul>
+				<li>Tid - om vi leste fra en minneadresse er det sannsynlig at vi snart vil lese fra den samme adressen igjen.</li>
+				<li>Rom - om vi leste fra en minneadresse er det sannsynlig at vi snart vil lese fra naboadressen.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Dataavhengighet</th>
+		<td>
+			<ul>
+				<li>RAW - Read-After-Write (sanne dataavhengigheter) er når f.eks. instruksjon 1 skriver til et register og instruksjon 2 skal lese fra det samme registeret.</li>
+				<li>WAW - Write-After-Write (utavhengigheter) er når f.eks. instruksjon 3 skriver til register 1 og instruksjon 1 skriver til register 1.</li>
+				<li>WAR - Write-After-Read (antiavhengigheter) er når f.eks. instruksjon 3 skriver til register 1 og instruksjon 2 leser fra R1.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>RAM</th>
+		<td>
+			<ul>
+				<li>SRAM - Statisk RAM er raskt og trenger ikke oppdateres. Brukes ofte i hurtigbuffere.</li>
+				<li>DRAM - Dynamisk RAM må friskes opp jevnlig. Det tar mindre plass en SRAM (2 vs. 6 transistorer).</li>
+				<li>SDRAM - Synkront Dynamisk RAM betyr at data blir overført til/fra RAM synkront med klokka (og systembussen)</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>CMP</th>
+		<td>
+			Chip-level MultiProsessor er flere prosessorer på samme brikke. Bruker samme hurtigbuffer
+			<ul>
+				<li>Homogene kjerner - alle kjernene er like</li>
+				<li>Heterogene kjerner - forskjellige kjerner til forskjellige oppgaver, dvs de har forskjellig instruksjonsett og/eller ytelse.</li>
+			</ul>
+			Fordeler med CMP er lavere effekt/varmeutvikling, bedre utnyttelse av prosessorkraft, mulighet for "ut av rekkefølge" og lettere å utnytte instruksjonsnivåparallellitet.
+		</td>
+	</tr>
+	<tr>
+		<th>Adressering</th>
+		<td>
+			Måten instruksjonen angir hvor data skal hentes fra kalles en adresseringsmodus.
+			<ul>
+				<li>Immidiate - Operanden er innbakt i instruksjonen. Dersom operanden er kjent (en konstant) når programmet lages, kan verdien av denne legges inn i selve instruksjonen.</li>
+				<li>Direkte - Instruksjonen angir adressen til operand i RAM.</li>
+				<li>Indirekte - Instruksjonen angir adresse til RAM-celle som igjen inneholder adressen til operand</li>
+				<li>Register - Instruksjon har nummer på register som inneholder operand. Populært å bruke siden</li>
+				<li>Indirekte register - Instruksjon har nummer på register som inneholder adresse til operand i RAM</li>
+				<li>Stakk - Adressen er implisitt gitt av stakkpeker.</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Branch Prediction</th>
+		<td>
+			(NO: Forgreningspredikering)
+			<ul>
+				<li>Statisk - forutsier hopp uavhengig av hvor hopp har forekommet før. Forutsier aldri/alltid hopp.</li>
+				<li>Dynamisk - forutsier hopp ut i fra hvor det har skjedd hopp før.</li>
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+
