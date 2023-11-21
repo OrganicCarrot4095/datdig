@@ -47,7 +47,7 @@ Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det
 9. [*Datamaskinnettverk*](#del9)
 10. [*Framtidige trender*](#del10)
 11. [*Oppsummering*](#oppsummering)
-12. [*Det man trenger å vite...*](#christianskokebok)
+12. [*Alt man trenger å vite...*](#christianskokebok)
 
    <!-- Introduksjon                                    Kap 1,2               -->
    <!-- Instruksjonssett                                Kap 5                 -->
