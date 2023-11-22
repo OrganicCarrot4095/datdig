@@ -566,6 +566,68 @@ Desse kan kombinerast for å implemetere mikroarkitekturar.
 - Eigentleg eit OS-konsept, men det finst ofte støtte for virtuelt minne i mikroarkitektur: MMU, TLB (translation lookaside buffer)
 
 
+#### Viktige ord
+
+Tallsystemer
+• binære tallene
+• toers komplement
+• omregning mellom tallsystemer
+• bits og bytes, ord
+• flyttall
+
+
+Digitalteknikk
+• porter
+• multiplekser
+• adderer
+• dekoder
+• klokkesignal, synkrone kretser, vipper
+
+
+Prosessor
+• von Neumann-arkitektur
+• mikrooperasjoner
+• prosessoren, introduksjon
+• utførende enhet: ALU, registerblokk, styreord
+• PC, SR, IR
+• styreenhet
+• instruksjonssykel
+• samlebånd: dataavhengigheter, håndtering av forgreninger (hopp)
+• RISC/CISC
+• big/little endian
+
+Instruksjoner
+• instruksjonssett
+• assembly
+• antall operander
+• load/store-maskin
+• adresseringsmodi
+• instruksjonsformat
+
+I/O
+• Lageravbildet I/O vs. egne I/O-instruksjoner
+• I/O-kontroller
+• programmert I/O
+• avbruddsdrevet I/O
+• DMA
+• busser: data-, adresse- og styrelinjer, busshierarki, bussarbitrering, synkron vs. asynkron buss
+
+Lagerhierarki
+• lagerhierarki
+• hastighet vs. størrelse vs. pris
+• lokalitetsprinsippet
+
+Cache/Hurtigbuffer
+• avbildningsfunksjon: direkteavbildning, assosiativ avbildning, sett-assosiativ avbildning
+• erstatningsalgoritmer: LRU, FIFO , LFU og tilfeldig
+• skrivestrategi: gjennomskriving og utsatt tilbakeskriving
+
+Primærlageret
+• RAM: Statisk RAM (SRAM) og Dynamisk RAM (DRAM)
+• ROM
+• adressring
+• feilkorrigering
+
 
 <a name="christianskokebok"></a>
 ### Følgjande er henta frå <a href="http://youkok.com/askeland/" target="_blank">Christans kokebok</a>
