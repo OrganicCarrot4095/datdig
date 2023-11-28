@@ -1,6 +1,6 @@
 
 #  Kompendium TDT4160 - Datamaskinar og digitalteknikk
-#### Dette er eit sjølvskriven kompendium. Forfattaren innehar liite kunnskap og tek ikkje ansvar for evt. feil.
+#### Sjølvskriven kompendium. Forfattaren innehar liiite kunnskap og tek ikkje ansvar for evt. feil.
 
 <a name="del1"></a>
 ## 1. Innleiing til Datamaskinar og digitalteknikk
