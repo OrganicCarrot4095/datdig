@@ -30,7 +30,7 @@ Eit operativsystem (OS) er eit program som fungerer som ein mellommann mellom br
 #### Nettverk:
 Et datanettverk er ein gruppe av datamaskiner og andre einingar som er forbunde samen for å dele ressursar og data. Internettet er eit globalt system av samenkopla datanettverk som brukar internettprotokollen (IP) for å knytte saman einingar over heile verda, tillét datamaskinar å kommunisere, og dele informasjon på tvers av lange avstandar.
 
-#### Brukergrensesnitt:**
+#### Brukergrensesnitt:
 Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det finst to hovedtyper:
 - **Grafiske brukergrensesnitt (GUI):** Tillét brukarar å samhandle med datamaskinar gjennom visuelle element som vindu, ikon og menyar.
 - **Kommandolinje-grensesnitt (CLI):** Tillét brukarar å samhandle med datamaskinen gjennom tekstkommandoar. CLI er kraftigare men kan være meir komplekst å bruke og krev kjennskap til spesifikke kommandospråk.
