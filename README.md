@@ -64,7 +64,7 @@ Brukergrensesnittet er det punktet der menneske samhandlar med datamaskiner. Det
 
 <a name="del2"></a>
 ## 2. Grunnleggjande om digital logikk
-### Digital logikk og viktigheten av denne
+### Digital logikk og viktigheita av denne
 Digital logikk er studiet av elektroniske system som nyttar binære tal for å representere og manipulere informasjon. Dette konseptet er grunnmuren for alle datamaskinar og mange andre typar elektroniske einingar. Ved å bruke binærsystemet, klarar digital logikk å utføre komplekse berekningar og datahandtering gjennom relativt enkle operasjonar. Desse operasjonane blir utført ved hjelp av logiske portar, slik som AND, OR og NOT. Dei ulike portane har ulike eigenskapar som vi skal sjå på seinare. Ved å kombinere desse grunnleggjande operasjonane i meir kompliserte kretsar, kan digital logikk utføre alle typar datamaskininstruksjonar. Dette gjer det mogleg for elektroniske einingar å køyre program, prosessere data og simulere menneskeleg tenkning i form av kunstig intelligens.
 
 ### Binære system og datarepresentasjon
